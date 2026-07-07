@@ -29,9 +29,8 @@ const Contact = () => {
                 href="https://wa.me/6282292654389"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
+                className="flex-shrink-0 transition-all duration-300 hover:bg-black hover:px-0 hover:py-0 rounded group-hover:scale-110"
               >
-                {/* UKURAN BARU: Diperbesar 20% menjadi w-[44px] h-[44px] */}
                 <img src={iconWa} alt="WhatsApp" className="w-[44px] h-[44px] object-contain inverted-icon" />
               </a>
               <span className="text-white font-medium text-xl md:text-2xl tracking-wide">
@@ -45,9 +44,8 @@ const Contact = () => {
                 href="https://instagram.com/masakseni"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
+                className="flex-shrink-0 transition-all duration-300 hover:bg-black hover:px-0 hover:py-0 rounded group-hover:scale-110"
               >
-                {/* UKURAN BARU: Diperbesar 20% menjadi w-[44px] h-[44px] */}
                 <img src={iconIg} alt="Instagram" className="w-[44px] h-[44px] object-contain inverted-icon" />
               </a>
               <span className="text-white font-medium text-xl md:text-2xl tracking-wide">
@@ -59,9 +57,8 @@ const Contact = () => {
             <div className="flex items-center gap-5 group -mt-5">
               <a
                 href="mailto:tempatmasakseni@gmail.com"
-                className="flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
+                className="flex-shrink-0 transition-all duration-300 hover:bg-black hover:px-0 hover:py-0 rounded group-hover:scale-110"
               >
-                {/* UKURAN BARU: Diperbesar 20% menjadi w-[44px] h-[44px] */}
                 <img src={iconEmail} alt="Email" className="w-[44px] h-[44px] object-contain inverted-icon" />
               </a>
               <span className="text-white font-medium text-xl md:text-2xl tracking-wide break-all">
