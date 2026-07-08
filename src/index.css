@@ -28,3 +28,136 @@ body {
   margin: 0;
   text-align: center;
 }
+
+/* ===== TABLET RESPONSIVE (768px - 1024px) ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background-size: cover;
+  }
+
+  /*
+    =====================================================
+    SERVICES - OVERRIDE UNTUK TABLET (semua nilai pake vw)
+    =====================================================
+    Tidak ada generic first-of-type / last-of-type lagi.
+    Tiap child di-grid diatur satu per satu.
+
+    GRID LAYOUT:
+    Row 1: child 1 (Design), child 2 (Video), child 3 (Web)
+    Row 2: child 4 (Branding), child 5 (OUR SERVICE), child 6 (Sosmed)
+    =====================================================
+  */
+
+  /* ---- CHILD 1 (Design) ---- */
+  #service .grid > div:nth-child(1) > img:first-of-type {
+    width: 150% !important;
+    
+    margin-top: 0vw !important;
+    margin-bottom: 0vw !important;
+  }
+  #service .grid > div:nth-child(1) > img:last-of-type {
+    width: 150% !important;
+    margin-top: -30vw !important;
+  }
+
+  /* ---- CHILD 2 (Video) ---- */
+  #service .grid > div:nth-child(2) > img:first-of-type {
+    width: 150% !important;
+    margin-top: 0vw !important;
+  }
+  #service .grid > div:nth-child(2) > img:last-of-type {
+    width: 150% !important;
+    margin-top: -30vw !important;
+  }
+
+  /* ---- CHILD 3 (Web) ---- */
+  #service .grid > div:nth-child(3) > img:first-of-type {
+    width: 150% !important;
+    margin-top: 0vw !important;
+  }
+  #service .grid > div:nth-child(3) > img:last-of-type {
+    width: 150% !important;
+    margin-top: -30vw !important;
+  }
+
+  /* ---- CHILD 4 (Branding - Row 2) ---- */
+  #service .grid > div:nth-child(4) > img:last-of-type {
+    overflow: visible !important;
+    width: 120% !important;
+    margin-left: 0% !important;
+  }
+  #service .grid > div:nth-child(4) > img:first-of-type {
+    width: 150% !important;
+    margin-top: 0vw !important;
+  }
+  #service .grid > div:nth-child(4) > img:last-of-type {
+    width: 150% !important;
+    margin-top: -30vw !important;
+  }
+
+  /* ---- CHILD 5 (OUR SERVICE - Row 2) ---- */
+  #service .grid > div:nth-child(5) {
+    margin-top: -60vw !important;
+  }
+  #service .grid > div:nth-child(5) span {
+    font-size: 4vw !important;
+  }
+  #service .grid > div:nth-child(5) span:last-child {
+    margin-top: -0.8vw !important;
+  }
+
+  /* ---- CHILD 6 (Sosmed - Row 2) ---- */
+  #service .grid > div:nth-child(6) > img:last-of-type {
+    overflow: visible !important;
+    width: 100% !important;
+    margin-left: 0% !important;
+  }
+  #service .grid > div:nth-child(6) > img:first-of-type {
+    width: 150% !important;
+    margin-top: 0vw !important;
+  }
+  #service .grid > div:nth-child(6) > img:last-of-type {
+    width: 140% !important;
+    margin-top: -29vw !important;
+    margin-left: 0vw !important;
+  }
+
+  /*
+    ===============================================
+    SERVICES - MARGIN PER ROW
+    ===============================================
+    Gunakan class ini untuk mengatur margin-bottom ROW 1 dan ROW 2:
+    - .service-row-1 → child 1, 2, 3 (Design, Video, Web)
+    - .service-row-2 → child 4, 5, 6 (Branding, OUR SERVICE, Sosmed)
+
+    CARA EDIT: Ubah nilai margin-bottom di bawah ini
+  */
+  #service .grid > .service-row-1 {
+    margin-bottom: 17vw !important;
+  }
+  #service .grid > .service-row-2 {
+    margin-bottom: 0vw !important;
+  }
+
+
+
+  /* ---- OVERFLOW (cegah konten overflow) ---- */
+  #service .grid > div {
+    overflow: hidden !important;
+  }
+
+  /* OVERRIDE: Kolom Branding (child 4) & Sosmed (child 6) tetap visible agar gambar tidak terpotong */
+  #service .grid > div:nth-child(4),
+  #service .grid > div:nth-child(6) {
+    overflow: visible !important;
+  }
+
+  /* ---- GRID SPACING ---- */
+  #service .grid {
+    row-gap: 0vw !important;
+    column-gap: 1.4vw !important;
+  }
+}
+
+/* ===== DESKTOP (1024px+) ===== */
+/* Semua style desktop tetap seperti aslinya, tidak ada perubahan */

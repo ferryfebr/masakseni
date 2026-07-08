@@ -45,7 +45,7 @@ const Hero = () => {
         <motion.img
           src={heroImg}
           alt="Masakseni Hero 1"
-          className="absolute max-w-full max-h-full object-contain mt-25"
+          className="absolute max-w-full max-h-full object-contain mt-25 md:mt-15 lg:mt-25 md:max-w-[90%] lg:max-w-full"
           initial={{ opacity: 1 }}
           animate={{ opacity: activeImage === 1 ? 1 : 0 }}
           transition={{ duration: 1, ease: 'easeInOut' }}
@@ -54,7 +54,7 @@ const Hero = () => {
         <motion.img
           src={gambarHero2}
           alt="Masakseni Hero 2"
-          className="absolute max-w-[50%] max-h-[80%] object-contain mt-25"
+          className="absolute max-w-[50%] max-h-[80%] object-contain mt-25 md:mt-15 lg:mt-25"
           initial={{ opacity: 0 }}
           animate={{ opacity: activeImage === 2 ? 1 : 0 }}
           transition={{ duration: 1, ease: 'easeInOut' }}

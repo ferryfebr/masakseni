@@ -57,7 +57,7 @@ const Clients = () => {
             {clients.map((src, index) => (
               <div 
                 key={`client-1-${index}`} 
-                className="w-[160px] flex-shrink-0 px-3 flex items-center justify-center transition-transform duration-300 hover:scale-105"
+                className="w-[160px] md:w-[120px] lg:w-[160px] flex-shrink-0 px-3 flex items-center justify-center transition-transform duration-300 hover:scale-105"
               >
                 <img
                   src={src}
@@ -75,7 +75,7 @@ const Clients = () => {
             {clients.map((src, index) => (
               <div 
                 key={`client-2-${index}`} 
-                className="w-[160px] flex-shrink-0 px-3 flex items-center justify-center transition-transform duration-300 hover:scale-105"
+                className="w-[160px] md:w-[120px] lg:w-[160px] flex-shrink-0 px-3 flex items-center justify-center transition-transform duration-300 hover:scale-105"
               >
                 <img
                   src={src}
