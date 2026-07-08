@@ -20,51 +20,45 @@ const Contact = () => {
             </span>
           </div>
 
-          {/* Contact List - Jarak antar list sedikit disesuaikan agar seimbang dengan logo yang membesar */}
-          <div className="space-y-8 pl-2 -mt-5">
+          {/* Contact List */}
+          <div className="space-y-4 pl-2 -mt-0">
             
             {/* WhatsApp */}
-            <div className="flex items-center gap-5 group">
-              <a
-                href="https://wa.me/6282292654389"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0 transition-all duration-300 hover:bg-black hover:px-0 hover:py-0 rounded group-hover:scale-110"
-              >
-                <img src={iconWa} alt="WhatsApp" className="w-[44px] h-[44px] object-contain inverted-icon" />
-              </a>
-              <span className="text-white font-medium text-xl md:text-2xl tracking-wide">
+            <a
+              href="https://wa.me/6282292654389"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-3 py-2 rounded-md transition-all duration-300 hover:bg-black hover:scale-100 group"
+            >
+              <img src={iconWa} alt="WhatsApp" className="w-[44px] h-[44px] object-contain inverted-icon flex-shrink-0" />
+              <span className="text-white font-medium text-xl md:text-2xl tracking-wide group-hover:text-white transition-colors duration-300">
                 082292654389
               </span>
-            </div>
+            </a>
 
             {/* Instagram */}
-            <div className="flex items-center gap-5 group -mt-5">
-              <a
-                href="https://instagram.com/masakseni"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0 transition-all duration-300 hover:bg-black hover:px-0 hover:py-0 rounded group-hover:scale-110"
-              >
-                <img src={iconIg} alt="Instagram" className="w-[44px] h-[44px] object-contain inverted-icon" />
-              </a>
-              <span className="text-white font-medium text-xl md:text-2xl tracking-wide">
+            <a
+              href="https://instagram.com/masakseni"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-3 py-2 rounded-md transition-all duration-300 hover:bg-black hover:scale-100 group"
+            >
+              <img src={iconIg} alt="Instagram" className="w-[44px] h-[44px] object-contain inverted-icon flex-shrink-0" />
+              <span className="text-white font-medium text-xl md:text-2xl tracking-wide group-hover:text-white transition-colors duration-300">
                 @masakseni
               </span>
-            </div>
+            </a>
 
             {/* Email */}
-            <div className="flex items-center gap-5 group -mt-5">
-              <a
-                href="mailto:tempatmasakseni@gmail.com"
-                className="flex-shrink-0 transition-all duration-300 hover:bg-black hover:px-0 hover:py-0 rounded group-hover:scale-110"
-              >
-                <img src={iconEmail} alt="Email" className="w-[44px] h-[44px] object-contain inverted-icon" />
-              </a>
-              <span className="text-white font-medium text-xl md:text-2xl tracking-wide break-all">
+            <a
+              href="mailto:tempatmasakseni@gmail.com"
+              className="flex items-center gap-3 px-3 py-2 rounded-md transition-all duration-300 hover:bg-black hover:scale-100 group"
+            >
+              <img src={iconEmail} alt="Email" className="w-[44px] h-[44px] object-contain inverted-icon flex-shrink-0" />
+              <span className="text-white font-medium text-xl md:text-2xl tracking-wide break-all group-hover:text-white transition-colors duration-300">
                 tempatmasakseni@gmail.com
               </span>
-            </div>
+            </a>
 
           </div>
         </div>
