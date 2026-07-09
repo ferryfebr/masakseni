@@ -29,10 +29,14 @@ body {
   text-align: center;
 }
 
-/* ===== TABLET RESPONSIVE (768px - 1024px) ===== */
-@media (min-width: 768px) and (max-width: 1024px) {
+/* ===== TABLET RESPONSIVE (640px - 1024px) ===== */
+/* Meliputi iPad Mini (744px), iPad Air (820px), iPad Pro (834px / 1024px), dan tablet lainnya */
+@media (min-width: 640px) and (max-width: 1024px) {
   body {
-    background-size: cover;
+    background-image: url('./assets/bg-tablet.png') !important;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   /*
@@ -139,7 +143,169 @@ body {
     margin-bottom: 0vw !important;
   }
 
+  /*
+    =====================================================
+    HERO - OVERRIDE UNTUK TABLET
+    =====================================================
+    Semua nilai pakai vw agar fleksibel di semua dimensi tablet.
+    Tidak mengubah struktur HTML Hero, hanya override CSS di media query.
 
+    STRUKTUR HERO:
+    - #hero > div:first-child → motion.div container video (absolute inset-0)
+    - #hero > div:nth-child(2) → div container gambar cross-fade (absolute inset-0)
+    =====================================================
+  */
+
+  /* ---- HERO: Perlebar container video & centerkan ---- */
+  #hero > div:first-child {
+    width: 102% !important;
+    left: 0% !important;
+    transform: translateX(0%) !important;
+  }
+
+  /* ---- HERO: Perlebar container gambar 150% & centerkan ---- */
+  #hero > div:nth-child(2) {
+    width: 100% !important;
+    left: 0% !important;
+    transform: translateX(0%) !important;
+    -webkit-transform: translateX(0%) !important;
+    -moz-transform: translateX(0%) !important;
+    -ms-transform: translateX(0%) !important;
+    -o-transform: translateX(0%) !important;
+}
+
+  /* ---- HERO: Video isi penuh container ---- */
+  #hero video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* ---- HERO: Gambar hero 1 (hilangkan batasan max-width md) ---- */
+  #hero .md\:max-w-\[90\%\],
+  #hero img:first-of-type {
+    max-width: none !important;
+    width: 80% !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+
+  /* ---- HERO: Gambar hero 2 ---- */
+  #hero img:last-of-type {
+    max-width: none !important;
+    width: 80% !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+
+  /* ---- HERO: Hapus overflow hidden agar konten yang melebar tidak terpotong ---- */
+  #hero {
+    overflow: visible !important;
+  }
+
+  /*
+    =====================================================
+    NAVBAR - OVERRIDE UNTUK TABLET (semua nilai pake vw)
+    =====================================================
+    Untuk layout navbar tablet:
+    - Menu desktop (min-[1025px]:inline-block) tetap hidden di <1025px
+    - Menu hamburger + dropdown sudah default di <1025px
+    - Hanya override ukuran/flexibility saja
+    =====================================================
+  */
+
+  /* ---- NAVBAR: Container utama ---- */
+  /* Pastikan fixed position tidak berubah saat di-scroll */
+  nav {
+    padding-top: 0vw !important;
+    padding-bottom: 0vw !important;
+    width: 100% !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 50 !important;
+  }
+  nav > div:first-of-type {
+    gap: 8vw !important;
+    width: 100% !important;
+    padding-left: 2vw !important;
+    padding-right: 2vw !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ---- NAVBAR: Logo ---- */
+  nav img[alt="Masakseni Logo"] {
+    height: 12vw !important;
+  }
+
+  /* ---- NAVBAR: Link desktop (About, Service, Client, Contact) ---- */
+  nav a:not([to="hero"]) {
+    font-size: 2vw !important;
+    padding-left: 1.5vw !important;
+    padding-right: 1.5vw !important;
+    padding-top: 0.5vw !important;
+    padding-bottom: 0.5vw !important;
+  }
+
+  /* ---- NAVBAR: Hamburger button ---- */
+  nav button {
+    right: 4.5vw !important;
+    top: 3vw !important;
+    padding: 2vw !important;
+  }
+  nav button span {
+    width: 3.5vw;
+    height: 0.5vw;
+  }
+  nav button span:nth-child(2) {
+    margin-top: 0.8vw;
+  }
+  nav button span:nth-child(3) {
+    margin-top: 0.8vw;
+  }
+  /* Reset margin-top saat hamburger aktif membentuk X */
+  nav button span.rotate-0,
+  nav button span.-rotate-0 {
+    margin-top: 0 !important;
+    width: 3vw !important;
+  }
+  /* Override translate-y untuk X animation agar proporsional di semua tablet */
+  nav button span.rotate-45 {
+    transform: translateY(0.2vw) rotate(180deg) !important;
+    -webkit-transform: translateY(0.2vw) rotate(180deg) !important;
+    -moz-transform: translateY(0.2vw) rotate(180deg) !important;
+    -ms-transform: translateY(0.2vw) rotate(180deg) !important;
+    -o-transform: translateY(0.2vw) rotate(180deg) !important;
+}
+  nav button span.-rotate-45 {
+    transform: translateY(-0.2vw) rotate(-180deg) !important;
+    -webkit-transform: translateY(-0.2vw) rotate(-180deg) !important;
+    -moz-transform: translateY(-0.2vw) rotate(-180deg) !important;
+    -ms-transform: translateY(-0.2vw) rotate(-180deg) !important;
+    -o-transform: translateY(-0.2vw) rotate(-180deg) !important;
+}
+
+  /* ---- NAVBAR: Dropdown menu ---- */
+  nav > div:last-child {
+    overflow: visible !important;
+  }
+  nav > div:last-child > div {
+    padding-left: 1vw !important;
+    padding-right: 2vw !important;
+    padding-top: 1.5vw !important;
+    padding-bottom: 1.5vw !important;
+  }
+  nav > div:last-child > div > div {
+    gap: 0.5vw !important;
+  }
+  nav > div:last-child a {
+    font-size: 2.2vw !important;
+    padding-left: 2vw !important;
+    padding-right: 2vw !important;
+    padding-top: 2vw !important;
+    padding-bottom: 2vw !important;
+  }
 
   /* ---- OVERFLOW (cegah konten overflow) ---- */
   #service .grid > div {
@@ -157,6 +323,87 @@ body {
     row-gap: 0vw !important;
     column-gap: 1.4vw !important;
   }
+
+  /*
+    =====================================================
+    CLIENTS - OVERRIDE UNTUK TABLET (semua nilai pake px/vw)
+    =====================================================
+    Ukuran container item di tablet diperbesar 50% dari ukuran asli (120px → 180px).
+    Tidak mengubah file Clients.jsx, cukup override CSS di sini.
+    =====================================================
+  */
+  #client .pure-infinite-scroll > .flex-shrink-0 > div {
+    width: 180px !important;
+  }
+
+  /*
+    =====================================================
+    CONTACT - OVERRIDE UNTUK TABLET (nilai diperbesar 50%)
+    =====================================================
+    - Ikon sosial media: 36px → 54px
+    - Teks kontak: 18px (text-lg) → 27px
+    - Heading Contact Person: 44px → 66px
+    Tidak mengubah file Contact.jsx, cukup override CSS di sini.
+    =====================================================
+  */
+  #contact img[alt="WhatsApp"],
+  #contact img[alt="Instagram"],
+  #contact img[alt="Email"] {
+    width: 54px !important;
+    height: 54px !important;
+  }
+  /* Teks kontak (nomor WA, username IG, email) */
+  #contact .space-y-4 a span {
+    font-size: 27px !important;
+  }
+  /* Heading "Contact" dan "Person" */
+  #contact .flex.flex-col.items-start.font-bold span.bg-\[\#1A1A1A\] {
+    font-size: 66px !important;
+  }
+
+  /*
+    =====================================================
+    KURANGI JARAK ANTAR SECTION DI TABLET (hanya mb section)
+    =====================================================
+    - About:    -mb-56 → -10rem
+    - Services: -mb-40 → -6rem
+    - Clients:  py-24   → padding-bottom 2.5rem
+    - Contact:  -mt-[20px] → 0
+    Hero tidak disentuh.
+    =====================================================
+  */
+  #about {
+    margin-bottom: -10rem !important;
+  }
+  #service {
+    margin-bottom: -6rem !important;
+  }
+  #client {
+    padding-bottom: 2.5rem !important;
+  }
+  #contact {
+    margin-top: 0 !important;
+  }
+}
+
+/* ===== IPAD PRO SPECIFIC (834px - 1024px) ===== */
+/* Override khusus untuk dimensi iPad Pro agar X animation serasi dengan iPad Air/Mini */
+@media (min-width: 834px) and (max-width: 1024px) {
+  /* ---- NAVBAR: Override X animation button untuk iPad Pro ---- */
+  nav button span.rotate-45 {
+    transform: translateY(0.5vw) rotate(180deg) !important;
+    -webkit-transform: translateY(0.5vw) rotate(180deg) !important;
+    -moz-transform: translateY(0.5vw) rotate(180deg) !important;
+    -ms-transform: translateY(0.5vw) rotate(180deg) !important;
+    -o-transform: translateY(0.5vw) rotate(180deg) !important;
+}
+  nav button span.-rotate-45 {
+    transform: translateY(-0.5vw) rotate(-180deg) !important;
+    -webkit-transform: translateY(-0.5vw) rotate(-180deg) !important;
+    -moz-transform: translateY(-0.5vw) rotate(-180deg) !important;
+    -ms-transform: translateY(-0.5vw) rotate(-180deg) !important;
+    -o-transform: translateY(-0.5vw) rotate(-180deg) !important;
+}
 }
 
 /* ===== DESKTOP (1024px+) ===== */

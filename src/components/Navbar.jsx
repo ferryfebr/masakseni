@@ -108,7 +108,7 @@ const Navbar = () => {
       </div>
 
       {/* Tablet Dropdown Menu */}
-      <div className={`min-[1025px]:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+      <div className={`min-[1025px]:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100 pointer-events-auto' : 'max-h-0 opacity-0 pointer-events-none'}`}>
         <div className="bg-gradient-to-r from-[#7f7f7f] to-[#454545] border-t-[2px] border-white/20 px-6 py-4">
           <div className="flex flex-col items-center gap-2">
             <Link to="about" smooth={true} offset={-100} duration={500} onClick={() => handleLinkClick('about')}
