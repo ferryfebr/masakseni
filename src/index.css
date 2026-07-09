@@ -33,7 +33,7 @@ body {
 /* Meliputi iPad Mini (744px), iPad Air (820px), iPad Pro (834px / 1024px), dan tablet lainnya */
 @media (min-width: 640px) and (max-width: 1024px) {
   body {
-    background-image: url('./assets/bg-tablet.JPG') !important;
+    background-image: url('./assets/bg-tablet.jpg') !important;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
