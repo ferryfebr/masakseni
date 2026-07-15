@@ -371,9 +371,8 @@ body {
   }
   /* Heading "Contact" dan "Person" */
   #contact .flex.flex-col.items-start.font-bold span.bg-\[\#1A1A1A\] {
-    font-size: 66px !important;
+    font-size: 12vw !important;
   }
-
   /*
     =====================================================
     KURANGI JARAK ANTAR SECTION DI TABLET (hanya mb section)
@@ -422,7 +421,7 @@ body {
 /* ===== MOBILE/HP RESPONSIVE (0px - 639px) ===== */
 @media (max-width: 639px) {
   body {
-    background-image: url('./assets/bg-full.png') !important;
+    background-image: url('./assets/bg-mobile.jpg') !important;
     background-size: cover;
     overflow-x: hidden !important;
     width: 100% !important;
@@ -479,10 +478,14 @@ body {
   nav button {
     right: 0 !important;
     top: 50% !important;
-    transform: translateY(-50%) !important;
+    transform: translateY(0) !important;
     padding: 2vw !important;
     position: absolute !important;
-  }
+    -webkit-transform: translateY(0) !important;
+    -moz-transform: translateY(0) !important;
+    -ms-transform: translateY(0) !important;
+    -o-transform: translateY(0) !important;
+}
   nav img[alt="Masakseni Logo"] {
     height: 15vw !important;
   }
@@ -507,11 +510,19 @@ body {
     width: 4.5vw !important;
   }
   nav button span.rotate-45 {
-    transform: translateY(0.3vw) rotate(180deg) !important;
-  }
+    transform: translateY(-0.5vw) rotate(180deg) !important;
+    -webkit-transform: translateY(-0.5vw) rotate(180deg) !important;
+    -moz-transform: translateY(-0.5vw) rotate(180deg) !important;
+    -ms-transform: translateY(-0.5vw) rotate(180deg) !important;
+    -o-transform: translateY(-0.5vw) rotate(180deg) !important;
+}
   nav button span.-rotate-45 {
-    transform: translateY(-0.3vw) rotate(-180deg) !important;
-  }
+    transform: translateY(0.6vw) rotate(-180deg) !important;
+    -webkit-transform: translateY(0.6vw) rotate(-180deg) !important;
+    -moz-transform: translateY(0.6vw) rotate(-180deg) !important;
+    -ms-transform: translateY(0.6vw) rotate(-180deg) !important;
+    -o-transform: translateY(0.6vw) rotate(-180deg) !important;
+}
   nav > div:last-child > div {
     padding-left: 3vw !important;
     padding-right: 3vw !important;
@@ -544,14 +555,14 @@ body {
   }
   #hero img:first-of-type {
     max-width: none !important;
-    width: 85% !important;
+    width: 100% !important;
     max-height: none !important;
     object-fit: contain !important;
     margin-top: 5vw !important;
   }
   #hero img:last-of-type {
     max-width: none !important;
-    width: 70% !important;
+    width: 90% !important;
     max-height: none !important;
     object-fit: contain !important;
     margin-top: 5vw !important;
@@ -562,30 +573,37 @@ body {
 
   /*
     =====================================================
-    SERVICES - OVERRIDE UNTUK HP (2 KOLOM)
+    SERVICES - OVERRIDE UNTUK HP (1 KOLOM)
     =====================================================
-    LAYOUT 2 KOLOM:
-    Row 1: child 1 (Design) | child 2 (Video)
-    Row 2: child 3 (Web)    | child 4 (Branding)
-    Row 3: child 5 (OUR SERVICE) full width
-    Row 4: child 6 (Sosmed) full width
+    LAYOUT 1 KOLOM:
+    Row 1: child 5 (OUR SERVICE)
+    Row 2: child 1 (Design)
+    Row 3: child 2 (Video)
+    Row 4: child 3 (Web)
+    Row 5: child 4 (Branding)
+    Row 6: child 6 (Sosmed)
     =====================================================
   */
   #service {
     padding-left: 4vw !important;
     padding-right: 4vw !important;
     margin-bottom: -10rem !important;
+    margin-top: -20rem !important;
   }
   #service .grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr !important;
     row-gap: 0vw !important;
-    column-gap: 2vw !important;
+    column-gap: 0vw !important;
   }
   #service .grid > div {
     overflow: hidden !important;
   }
   /* Child 4 & 6 tetap visible agar gambar tidak terpotong */
+  #service .grid > div:nth-child(1),
+  #service .grid > div:nth-child(2),
+  #service .grid > div:nth-child(3),
   #service .grid > div:nth-child(4),
+  #service .grid > div:nth-child(5),
   #service .grid > div:nth-child(6) {
     overflow: visible !important;
   }
@@ -597,67 +615,94 @@ body {
     margin-bottom: 0vw !important;
   }
 
-  /* ---- CHILD 1 (Design) ---- */
-  #service .grid > div:nth-child(1) > img:first-of-type {
-    width: 120% !important;
-    margin-top: 0vw !important;
-    margin-bottom: 0vw !important;
-  }
-  #service .grid > div:nth-child(1) > img:last-of-type {
-    width: 120% !important;
-    margin-top: -25vw !important;
-  }
-
-  /* ---- CHILD 2 (Video) ---- */
-  #service .grid > div:nth-child(2) > img:first-of-type {
-    width: 120% !important;
-    margin-top: 0vw !important;
-  }
-  #service .grid > div:nth-child(2) > img:last-of-type {
-    width: 120% !important;
-    margin-top: -25vw !important;
-  }
-
-  /* ---- CHILD 3 (Web) ---- */
-  #service .grid > div:nth-child(3) > img:first-of-type {
-    width: 120% !important;
-    margin-top: 0vw !important;
-  }
-  #service .grid > div:nth-child(3) > img:last-of-type {
-    width: 120% !important;
-    margin-top: -25vw !important;
-  }
-
-  /* ---- CHILD 4 (Branding) ---- */
-  #service .grid > div:nth-child(4) > img:first-of-type {
-    width: 120% !important;
-    margin-top: 0vw !important;
-  }
-  #service .grid > div:nth-child(4) > img:last-of-type {
-    width: 120% !important;
-    margin-top: -25vw !important;
-  }
-
-  /* ---- CHILD 5 (OUR SERVICE) - full width di tengah ---- */
+  /* ---- CHILD 5 (OUR SERVICE) - POSISI PERTAMA ---- */
   #service .grid > div:nth-child(5) {
-    margin-top: -35vw !important;
-    grid-column: 1 / -1 !important;
+    order: -1 !important;
+    margin-top: 0vw !important;
   }
   #service .grid > div:nth-child(5) span {
-    font-size: 5.5vw !important;
+    font-size: 10vw !important;
   }
   #service .grid > div:nth-child(5) span:last-child {
     margin-top: -1vw !important;
   }
 
-  /* ---- CHILD 6 (Sosmed) ---- */
-  #service .grid > div:nth-child(6) > img:first-of-type {
-    width: 120% !important;
-    margin-top: 0vw !important;
+  /* ---- CHILD 1 (Design) ---- */
+  #service .grid > div:nth-child(1) {
+    order: 0 !important;
   }
-  #service .grid > div:nth-child(6) > img:last-of-type {
+  #service .grid > div:nth-child(1) > img:first-of-type {
+    max-width: none !important;
+    width: 120% !important;
+    margin-top: -10vw !important;
+    margin-bottom: 0vw !important;
+  }
+  #service .grid > div:nth-child(1) > img:last-of-type {
+    max-width: none !important;
+    width: 120% !important;
+    margin-top: -85vw !important;
+  }
+
+  /* ---- CHILD 2 (Video) ---- */
+  #service .grid > div:nth-child(2) {
+    order: 1 !important;
+  }
+  #service .grid > div:nth-child(2) > img:first-of-type {
+    max-width: none !important;
+    width: 120% !important;
+    margin-top: -60vw !important;
+  }
+  #service .grid > div:nth-child(2) > img:last-of-type {
+    max-width: none !important;
+    width: 120% !important;
+    margin-top: -85vw !important;
+  }
+
+  /* ---- CHILD 3 (Web) ---- */
+  #service .grid > div:nth-child(3) {
+    order: 2 !important;
+  }
+  #service .grid > div:nth-child(3) > img:first-of-type {
+    max-width: none !important;
+    width: 120% !important;
+    margin-top: -60vw !important;
+    margin-bottom: -60vw !important;
+  }
+  #service .grid > div:nth-child(3) > img:last-of-type {
+    max-width: none !important;
     width: 120% !important;
     margin-top: -25vw !important;
+  }
+
+  /* ---- CHILD 4 (Branding) ---- */
+  #service .grid > div:nth-child(4) {
+    order: 3 !important;
+  }
+  #service .grid > div:nth-child(4) > img:first-of-type {
+    max-width: none !important;
+    width: 120% !important;
+    margin-top: 25vw !important;
+  }
+  #service .grid > div:nth-child(4) > img:last-of-type {
+    max-width: none !important;
+    width: 120% !important;
+    margin-top: -85vw !important;
+  }
+
+  /* ---- CHILD 6 (Sosmed) ---- */
+  #service .grid > div:nth-child(6) {
+    order: 4 !important;
+  }
+  #service .grid > div:nth-child(6) > img:first-of-type {
+    max-width: none !important;
+    width: 120% !important;
+    margin-top: 35vw !important;
+    margin-left: -3vw !important;
+  }
+  #service .grid > div:nth-child(6) > img:last-of-type {
+    max-width: none !important;
+    width: 95% !important;
+    margin-top: -75vw !important;
   }
 
   /*
@@ -666,17 +711,18 @@ body {
     =====================================================
   */
   #client .pure-infinite-scroll > .flex-shrink-0 > div {
-    width: 100px !important;
+    width: 200px !important;
   }
   #client {
-    padding-bottom: 2.5rem !important;
+    margin-bottom: -50vw !important;
   }
 
   /*
     =====================================================
-    CONTACT - OVERRIDE UNTUK HP (center)
+    CONTACT - OVERRIDE UNTUK HP (center + diperbesar 20%)
     =====================================================
     Posisi section di-center, tapi alignment item tetap text-left
+    Semua ukuran diperbesar 20% dari versi sebelumnya.
     =====================================================
   */
   #contact {
@@ -684,8 +730,8 @@ body {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    padding-left: 4vw !important;
-    padding-right: 4vw !important;
+    padding-left: 4.8vw !important;
+    padding-right: 4.8vw !important;
   }
   #contact .w-full.max-w-\[1300px\] {
     display: flex !important;
@@ -693,26 +739,76 @@ body {
   }
   #contact .flex.flex-col.items-start.text-left {
     align-items: flex-start !important;
-    max-width: 90% !important;
+    max-width: 100% !important;
   }
   #contact .flex.flex-col.items-start.font-bold span.bg-\[\#1A1A1A\] {
-    font-size: 10vw !important;
+    font-size: 14vw !important;
+    margin-bottom: 2vw !important;
   }
   #contact img[alt="WhatsApp"],
   #contact img[alt="Instagram"],
   #contact img[alt="Email"] {
     width: 8vw !important;
-    height: 8vw !important;
+    height: 7.6vw !important;
   }
   #contact .space-y-4 a span {
-    font-size: 4.5vw !important;
+    font-size: 4.4vw !important;
+  }
+  /* Container icon+text (WA, IG, Email) — ubah margin-top di sini */
+  #contact .space-y-4 {
+    margin-top: -10vw !important;
+    margin-left: -5vw !important;
   }
 
   /*
     =====================================================
-    SECTION SPACING - HP
+    ABOUT - OVERRIDE UNTUK HP
     =====================================================
+    - "ABOUT US" dipindah ke atas paragraf, digabung 1 baris, di tengah
+    - Kapsul menjadi di tengah layar (karena ABOUT US sudah di atas)
+    - Tidak mengubah design detail kapsul
   */
+  /* Sembunyikan kolom ABOUT US asli (posisi kiri) */
+  #about .flex.flex-row > div:first-child {
+    display: none !important;
+  }
+  /* Tambahkan judul "ABOUT US" di atas paragraf lorem */
+  #about .max-w-7xl > div:first-child::before {
+    content: "ABOUT US" !important;
+    display: block !important;
+    background-color: #000000 !important;
+    color: white !important;
+    font-size: 10vw !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    padding: 1vw 2vw !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 8vw !important;
+    margin-top: -10vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    width: fit-content !important;
+    line-height: 1 !important;
+  }
+  /* Perkecil font kapsul agar 1 baris di HP (hanya 2 kapsul, bukan lingkaran &) */
+  #about .flex.flex-row > div:last-child > div:first-child.rounded-full,
+  #about .flex.flex-row > div:last-child > div:last-child.rounded-full {
+    font-size: 4.5vw !important;
+  }
+  /* Center-kan kapsul di tengah layar */
+  #about .flex.flex-row {
+    justify-content: center !important;
+    margin-top: -5vw !important;
+  }
+  #about .flex.flex-row > div:last-child {
+    width: auto !important;
+    max-width: 100% !important;
+  }
+  /* Perkecil font paragraf About */
+  #about .max-w-\[700px\] p {
+    font-size: 3.8vw !important;
+  }
   #about {
     margin-bottom: -6rem !important;
   }
