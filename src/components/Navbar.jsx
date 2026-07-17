@@ -95,15 +95,26 @@ const Navbar = () => {
           Contact
         </Link>
 
-        {/* Hamburger Button - Visible on tablet */}
+        {/* Hamburger / X Button - Visible on tablet & mobile */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="absolute right-8 top-8 min-[1025px]:hidden flex flex-col items-center justify-center p-2 cursor-pointer select-none z-50"
+          className="absolute right-8 top-7 min-[1025px]:hidden flex items-center justify-center cursor-pointer select-none z-50"
           aria-label="Toggle menu"
         >
-          <span className={`block w-7 h-[3px] bg-white rounded transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-[9px]' : ''}`} />
-          <span className={`block w-7 h-[3px] bg-white rounded mt-[6px] transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-7 h-[3px] bg-white rounded mt-[6px] transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-[9px]' : ''}`} />
+          {isMenuOpen ? (
+            /* X icon */
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          ) : (
+            /* Hamburger icon */
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          )}
         </button>
       </div>
 

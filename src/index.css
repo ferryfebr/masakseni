@@ -420,6 +420,15 @@ body {
 
 /* ===== MOBILE/HP RESPONSIVE (0px - 639px) ===== */
 @media (max-width: 639px) {
+  /* 
+    VIEWPORT SCALING: Semua konten hp discale secara proporsional.
+    Base lebar referensi = 430px (iPhone 14 Pro Max).
+    Saat viewport lebih sempit, konten mengecil seragam — posisi tetap.
+  */
+  html {
+    zoom: min(calc(100vw / 430), 1);
+  }
+
   body {
     background-image: url('./assets/bg-mobile.jpg') !important;
     background-size: cover;
@@ -476,53 +485,17 @@ body {
     position: relative !important;
   }
   nav button {
-    right: 0 !important;
-    top: 50% !important;
-    transform: translateY(0) !important;
-    padding: 2vw !important;
     position: absolute !important;
-    -webkit-transform: translateY(0) !important;
-    -moz-transform: translateY(0) !important;
-    -ms-transform: translateY(0) !important;
-    -o-transform: translateY(0) !important;
-}
+    z-index: 250 !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    -webkit-transform: translateY(-50%) !important;
+    padding: 8px !important;
+  }
   nav img[alt="Masakseni Logo"] {
     height: 15vw !important;
   }
-  nav button {
-    right: 3vw !important;
-    top: 3.5vw !important;
-    padding: 2.5vw !important;
-  }
-  nav button span {
-    width: 5vw !important;
-    height: 0.8vw !important;
-  }
-  nav button span:nth-child(2) {
-    margin-top: 1vw !important;
-  }
-  nav button span:nth-child(3) {
-    margin-top: 1vw !important;
-  }
-  nav button span.rotate-0,
-  nav button span.-rotate-0 {
-    margin-top: 0 !important;
-    width: 4.5vw !important;
-  }
-  nav button span.rotate-45 {
-    transform: translateY(-0.5vw) rotate(180deg) !important;
-    -webkit-transform: translateY(-0.5vw) rotate(180deg) !important;
-    -moz-transform: translateY(-0.5vw) rotate(180deg) !important;
-    -ms-transform: translateY(-0.5vw) rotate(180deg) !important;
-    -o-transform: translateY(-0.5vw) rotate(180deg) !important;
-}
-  nav button span.-rotate-45 {
-    transform: translateY(0.6vw) rotate(-180deg) !important;
-    -webkit-transform: translateY(0.6vw) rotate(-180deg) !important;
-    -moz-transform: translateY(0.6vw) rotate(-180deg) !important;
-    -ms-transform: translateY(0.6vw) rotate(-180deg) !important;
-    -o-transform: translateY(0.6vw) rotate(-180deg) !important;
-}
   nav > div:last-child > div {
     padding-left: 3vw !important;
     padding-right: 3vw !important;
@@ -588,7 +561,7 @@ body {
     padding-left: 4vw !important;
     padding-right: 4vw !important;
     margin-bottom: -10rem !important;
-    margin-top: -20rem !important;
+    margin-top: -15rem !important;
   }
   #service .grid {
     grid-template-columns: 1fr !important;
@@ -791,26 +764,33 @@ body {
     width: fit-content !important;
     line-height: 1 !important;
   }
-  /* Perkecil font kapsul agar 1 baris di HP (hanya 2 kapsul, bukan lingkaran &) */
+  /* Perkecil font & padding kapsul agar 1 baris di HP */
   #about .flex.flex-row > div:last-child > div:first-child.rounded-full,
   #about .flex.flex-row > div:last-child > div:last-child.rounded-full {
-    font-size: 4.5vw !important;
+    font-size: 3.8vw !important;
+    padding-left: 6vw !important;
+    padding-right: 6vw !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  /* Parent container kapsul — stretch agar lebar kapsul sama */
+  #about .flex.flex-row > div:last-child {
+    width: 90% !important;
+    max-width: 100% !important;
+    align-items: stretch !important;
   }
   /* Center-kan kapsul di tengah layar */
   #about .flex.flex-row {
     justify-content: center !important;
     margin-top: -5vw !important;
   }
-  #about .flex.flex-row > div:last-child {
-    width: auto !important;
-    max-width: 100% !important;
-  }
   /* Perkecil font paragraf About */
   #about .max-w-\[700px\] p {
     font-size: 3.8vw !important;
   }
   #about {
-    margin-bottom: -6rem !important;
+    margin-bottom: -2rem !important;
   }
 }
 
